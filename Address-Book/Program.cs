@@ -40,6 +40,10 @@ namespace Address_Book
                         break;
 
                     case 7:
+                        operation.COUNT();
+                        break;
+
+                    case 8:
                         System.Environment.Exit(0);
                         break;
 

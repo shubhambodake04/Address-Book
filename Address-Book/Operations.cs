@@ -106,7 +106,10 @@ namespace Address_Book
 
                 }
 
-
+        }
+        public void COUNT()
+        {
+            Console.WriteLine("Total Number Of Contacts-- " + ContactLists.Count);
         }
 
 
