@@ -9,8 +9,14 @@ namespace Address_Book
         private Dictionary<string, Contact> ContactLists = new Dictionary<string, Contact>();
         public void ADD_CONTACT()
         {
-            Console.WriteLine("Enter FirstName");
+            Console.WriteLine("Enter First Name");
             string FirstName = Console.ReadLine();
+            foreach (var Info in ContactLists)
+                if (FirstName.Equals(Info.Value.FirstName))
+                {
+                    Console.WriteLine("This Contact is Already Added");
+                    Console.ReadLine();
+                }
             Console.WriteLine("Enter LastName");
             string LastName = Console.ReadLine();
             Console.WriteLine("Enter Address");
