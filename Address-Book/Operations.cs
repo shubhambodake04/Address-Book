@@ -10,7 +10,10 @@ namespace Address_Book
 {
     public class Operations
     {
+        
         private Dictionary<string, Contact> ContactLists = new Dictionary<string, Contact>();
+        string FILEPATH = @"C:\Users\Shubham\source\Address-Book\Address-Book\Utility\Example.txt";
+        string CSVFILEPATH = @"C:\Users\Shubham\source\Address-Book\Address-Book\Utility\Example.csv";
 
         public void ADD_CONTACT()
         {
@@ -152,18 +155,40 @@ namespace Address_Book
 
         public void AddressBook_To_TextFile()
         {
-
-            using (StreamWriter sr = File.AppendText(@"C:\Users\Shubham\source\Address-Book\Address-Book\AddressBook.txt"))
+            if (File.Exists(FILEPATH))
             {
-                foreach (var Info in ContactLists)
+                using (TextWriter tw = new StreamWriter(FILEPATH)) 
                 {
-                    sr.WriteLine(Info.Value.FirstName + "\n" + Info.Value.LastName + "\n" + Info.Value.Address + "\n" + Info.Value.City + "\n" + Info.Value.State + "\n" + Info.Value.Email + "\n" + Info.Value.PhoneNumber + "\n" + Info.Value.Zip);
-                }
-                sr.Close();
+                    tw.WriteLine(string.Format("FirstName,LastName,Address,City,State,,Email,PhoneNumber,Zip"));
+                        foreach (var Info in ContactLists)
+                        {
+                            tw.WriteLine(Info.Value.FirstName + "," + Info.Value.LastName + "," + Info.Value.Address + "," + Info.Value.City + "," + Info.Value.State + "," + Info.Value.Email + "," + Info.Value.PhoneNumber + "," + Info.Value.Zip);
+                        }
+                        tw.Close();
                 
+                 }
             }
+            else Console.WriteLine("File doesn't exist, Check the Path");
 
         }
         
+        public void Data_To_CSV()
+        {
+            if (File.Exists(CSVFILEPATH))
+            {
+                using (TextWriter tw = new StreamWriter(CSVFILEPATH))
+                {
+                    //var records = csv.Dictionary<Contact>().ToList();
+                    tw.WriteLine(string.Format("FirstName,LastName,Address,City,State,Email,PhoneNumber,Zip"));
+                    foreach (var Info in records)
+                    {
+                        tw.WriteLine(Info.Value.FirstName + "," + Info.Value.LastName + "," + Info.Value.Address + "," + Info.Value.City + "," + Info.Value.State + "," + Info.Value.Email + "," + Info.Value.PhoneNumber + "," + Info.Value.Zip);
+                    }
+                }
+            }
+            else Console.WriteLine("File doesn't exist, Check the Path");
+        }
+
+
     }
 }

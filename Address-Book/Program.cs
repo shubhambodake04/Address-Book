@@ -8,7 +8,8 @@ namespace Address_Book
         static void Main(string[] args)
         {
             Operations operation = new Operations();
-            
+            CSVHandler obj = new CSVHandler();
+           
             while (true)
             {
                 try
@@ -50,6 +51,10 @@ namespace Address_Book
                             break;
 
                         case 9:
+                            operation.Data_To_CSV();
+                            break;
+
+                        case 10:
                             System.Environment.Exit(0);
                             break;
 
