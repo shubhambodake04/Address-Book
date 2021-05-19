@@ -92,6 +92,20 @@ namespace Address_Book
 
                 }
 
+        }
+
+        public void VIEW_PERSON()
+        {
+            Console.WriteLine("Enter Name of Person:");
+            string Name = Console.ReadLine();
+
+            foreach (var Info in ContactLists)
+                if (Info.Value.FirstName.Equals(Name))
+                {
+                    Console.WriteLine("City:" + Info.Value.City + " ------ " + "FirstName:" + Info.Value.FirstName);
+
+                }
+
 
         }
 

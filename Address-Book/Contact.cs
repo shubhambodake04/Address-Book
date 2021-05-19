@@ -31,7 +31,8 @@ namespace Address_Book
             Console.WriteLine("3. Edit Contact");
             Console.WriteLine("4. Delete Contact");
             Console.WriteLine("5. Search Person Using City");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("6. View City Using Person");
+            Console.WriteLine("7. Exit");
 
         }
 

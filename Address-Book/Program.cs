@@ -36,6 +36,10 @@ namespace Address_Book
                         break;
 
                     case 6:
+                        operation.VIEW_PERSON();
+                        break;
+
+                    case 7:
                         System.Environment.Exit(0);
                         break;
 
