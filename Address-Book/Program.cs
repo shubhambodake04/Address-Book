@@ -32,7 +32,7 @@ namespace Address_Book
 
             foreach (Contact Info in list)
             {
-                Console.WriteLine(Info.FirstName + ", " + Info.LastName + ", " + Info.Address + ", " + Info.City + ", " + Info.State + ", " + Info.PhoneNumber + ", " + Info.Zip + ", " + Info.Email);
+                Console.WriteLine(Info.FirstName + " , " + Info.LastName + " , " + Info.Address + " , " + Info.City + ", " + Info.State + ", " + Info.PhoneNumber + ", " + Info.Zip + ", " + Info.Email);
             }
         }
     }
