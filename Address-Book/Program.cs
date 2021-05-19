@@ -8,6 +8,7 @@ namespace Address_Book
         static void Main(string[] args)
         {
             Operations operation = new Operations();
+            
             while (true)
             {
                 try

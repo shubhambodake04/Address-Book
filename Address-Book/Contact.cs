@@ -6,9 +6,15 @@ namespace Address_Book
 {
     class Contact
     {
-        public string FirstName, LastName, Address, City, State, Email;
-        public double PhoneNumber, Zip;
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Email { get; set; }
+        public double PhoneNumber { get; set; }
+        
+        public double Zip { get; set; }
         public Contact(string FirstName, string LastName, string Address, string City, string State, string Email, double PhoneNumber, double Zip)
         {
             this.FirstName = FirstName;
