@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Address_Book
@@ -7,33 +8,41 @@ namespace Address_Book
     public class Operations
     {
         private Dictionary<string, Contact> ContactLists = new Dictionary<string, Contact>();
+
         public void ADD_CONTACT()
         {
-            Console.WriteLine("Enter First Name");
-            string FirstName = Console.ReadLine();
-            foreach (var Info in ContactLists)
-                if (FirstName.Equals(Info.Value.FirstName))
-                {
-                    Console.WriteLine("This Contact is Already Added");
-                    Console.ReadLine();
-                }
-            Console.WriteLine("Enter LastName");
-            string LastName = Console.ReadLine();
-            Console.WriteLine("Enter Address");
-            string Address = Console.ReadLine();
-            Console.WriteLine("Enter City");
-            string City = Console.ReadLine();
-            Console.WriteLine("Enter State");
-            string State = Console.ReadLine();
-            Console.WriteLine("Enter Email");
-            string Email = Console.ReadLine();
-            Console.WriteLine("Enter PhoneNumber");
-            int PhoneNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Zip");
-            int Zip = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter First Name");
+                string FirstName = Console.ReadLine();
+                foreach (var Info in ContactLists)
+                    if (FirstName.Equals(Info.Value.FirstName))
+                    {
+                        Console.WriteLine("This Contact is Already Added");
+                        Console.ReadLine();
+                    }
+                Console.WriteLine("Enter LastName");
+                string LastName = Console.ReadLine();
+                Console.WriteLine("Enter Address");
+                string Address = Console.ReadLine();
+                Console.WriteLine("Enter City");
+                string City = Console.ReadLine();
+                Console.WriteLine("Enter State");
+                string State = Console.ReadLine();
+                Console.WriteLine("Enter Email");
+                string Email = Console.ReadLine();
+                Console.WriteLine("Enter PhoneNumber");
+                int PhoneNumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Zip");
+                int Zip = Convert.ToInt32(Console.ReadLine());
+                var newContact = new Contact(FirstName, LastName, Address, City, State, Email, PhoneNumber, Zip);
+                ContactLists.Add(FirstName, newContact);
 
-            var newContact = new Contact(FirstName, LastName, Address, City, State, Email, PhoneNumber, Zip);
-            ContactLists.Add(FirstName, newContact);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
         }
 
@@ -48,68 +57,109 @@ namespace Address_Book
 
         public void EDIT_CONTACT()
         {
-            Console.WriteLine(" Enter Name Which You Want To Edit");
-            string Name = Console.ReadLine();
+            try
+            {
+                Console.WriteLine(" Enter Name Which You Want To Edit");
+                string Name = Console.ReadLine();
 
+                foreach (var Info in ContactLists)
+                    if (Name.Equals(Info.Value.FirstName))
+                    {
+                        Console.WriteLine("Enter new FirstName");
+                        string NewFirstName = Console.ReadLine();
+                        Info.Value.FirstName = NewFirstName;
+                        Console.WriteLine(" Edited Successfully");
+                    }
+                throw new Exception("Select Correct Name");
 
-            foreach (var Info in ContactLists)
-                if (Name.Equals(Info.Value.FirstName))
-                {
-                    Console.WriteLine("Enter new FirstName");
-                    string NewFirstName = Console.ReadLine();
-                    Info.Value.FirstName = NewFirstName;
-
-                }
-            Console.WriteLine(" Edited Successfully");
-
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+           
         }
 
         public void DELETE_CONTACT()
         {
-            Console.WriteLine("Enter First Name of the Contact you want to Delete:");
-            string name = Console.ReadLine();
-            foreach (var contact in ContactLists)
+            try
             {
+                Console.WriteLine("Enter First Name of the Contact you want to Delete:");
+                string name = Console.ReadLine();
+                foreach (var contact in ContactLists)
                 if (contact.Value.FirstName == name)
-                {
-                    ContactLists.Remove(contact.Key);
-
-                }
+                    {
+                        ContactLists.Remove(contact.Key);
+                        Console.WriteLine("Deleted Successfully");
+                    }
+                    throw new Exception("Select Correct Name");
+            
             }
-            Console.WriteLine("Deleted Successfully");
-
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public void FIND_PERSON()
         {
-            Console.WriteLine("Enter City:");
-            string CityName = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("Enter City:");
+                string CityName = Console.ReadLine();
 
-            foreach (var Info in ContactLists)
-                if (CityName.Equals(Info.Value.City))
-                {
-                    Console.WriteLine("City:" + Info.Value.City + " ------ " + "FirstName:" + Info.Value.FirstName);
+                foreach (var Info in ContactLists)
+                    if (CityName.Equals(Info.Value.City))
+                    {
+                        Console.WriteLine("City:" + Info.Value.City + " ------ " + "FirstName:" + Info.Value.FirstName);
 
-                }
-
+                    }
+                throw new Exception("Please Enter Correct City Name");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public void VIEW_PERSON()
         {
-            Console.WriteLine("Enter Name of Person:");
-            string Name = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("Enter Name of Person:");
+                string Name = Console.ReadLine();
 
-            foreach (var Info in ContactLists)
-                if (Info.Value.FirstName.Equals(Name))
-                {
-                    Console.WriteLine("City:" + Info.Value.City + " ------ " + "FirstName:" + Info.Value.FirstName);
+                foreach (var Info in ContactLists)
+                    if (Info.Value.FirstName.Equals(Name))
+                    {
+                        Console.WriteLine("City:" + Info.Value.City + " ------ " + "FirstName:" + Info.Value.FirstName);
 
-                }
-
+                    }
+                throw new Exception("Please Enter Correct Person Name");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
         public void COUNT()
         {
             Console.WriteLine("Total Number Of Contacts-- " + ContactLists.Count);
+        }
+
+        public void AddressBook_To_TextFile()
+        {
+
+            using (StreamWriter sr = File.AppendText(@"C:\Users\Shubham\source\Address-Book\Address-Book\AddressBook.txt"))
+            {
+                foreach (var Info in ContactLists)
+                {
+                    sr.WriteLine(Info.Value.FirstName + "\n" + Info.Value.LastName + "\n" + Info.Value.Address + "\n" + Info.Value.City + "\n" + Info.Value.State + "\n" + Info.Value.Email + "\n" + Info.Value.PhoneNumber + "\n" + Info.Value.Zip);
+                }
+                sr.Close();
+                
+            }
+
         }
 
 

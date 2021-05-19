@@ -33,7 +33,8 @@ namespace Address_Book
             Console.WriteLine("5. Search Person Using City");
             Console.WriteLine("6. View City Using Person");
             Console.WriteLine("7. Total Number of Contacts in Address Book");
-            Console.WriteLine("8. Exit");
+            Console.WriteLine("8. perform File I/O");
+            Console.WriteLine("9. Exit");
 
         }
 
