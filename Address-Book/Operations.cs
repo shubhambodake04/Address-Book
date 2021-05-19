@@ -80,6 +80,21 @@ namespace Address_Book
 
         }
 
+        public void FIND_PERSON()
+        {
+            Console.WriteLine("Enter City:");
+            string CityName = Console.ReadLine();
+
+            foreach (var Info in ContactLists)
+                if (CityName.Equals(Info.Value.City))
+                {
+                    Console.WriteLine("City:" + Info.Value.City + " ------ " + "FirstName:" + Info.Value.FirstName);
+
+                }
+
+
+        }
+
 
     }
 }

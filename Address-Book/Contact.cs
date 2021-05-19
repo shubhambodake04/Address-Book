@@ -30,7 +30,8 @@ namespace Address_Book
             Console.WriteLine("2. View Contacts");
             Console.WriteLine("3. Edit Contact");
             Console.WriteLine("4. Delete Contact");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("5. Search Person Using City");
+            Console.WriteLine("6. Exit");
 
         }
 

@@ -32,6 +32,10 @@ namespace Address_Book
                         break;
 
                     case 5:
+                        operation.FIND_PERSON();
+                        break;
+
+                    case 6:
                         System.Environment.Exit(0);
                         break;
 
