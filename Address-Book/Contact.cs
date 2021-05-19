@@ -26,10 +26,11 @@ namespace Address_Book
         {
 
             Console.WriteLine("Please Select Option");
-            Console.WriteLine("1- Add Contact");
-            Console.WriteLine("2- View Contacts");
-            Console.WriteLine("3- Edit Contact");
-            Console.WriteLine("4- Exit");
+            Console.WriteLine("1. Add Contact");
+            Console.WriteLine("2. View Contacts");
+            Console.WriteLine("3. Edit Contact");
+            Console.WriteLine("4. Delete Contact");
+            Console.WriteLine("5. Exit");
 
         }
 

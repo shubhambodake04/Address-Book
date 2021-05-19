@@ -49,15 +49,32 @@ namespace Address_Book
                         foreach (Contact Info in list)
                             if (Name.Equals(Info.FirstName))
                             {
-                                Console.WriteLine("Enter new FirstName");
-                                string NewFirstName = Console.ReadLine();
-                                Info.FirstName = NewFirstName;
+                                Console.WriteLine("Enter new FName");
+                                string NewName = Console.ReadLine();
+                                Info.FirstName = NewName;
 
                             }
                         Console.WriteLine(" Edited Successfully");
                         break;
 
-                   
+                    case 4:
+                        Console.WriteLine("Enter Name Which You Want To Delete");
+                        string delete = Console.ReadLine();
+                        Contact contact = null;
+
+                        foreach (Contact Info in list)
+                        {
+                            if (Info.FirstName == delete)
+                            {
+                                contact = Info;
+                              
+                            }
+                            list.Remove(contact);
+                        }
+                        Console.WriteLine(" Deleted Successfully");
+                        break;
+
+
                     case 5:
                         System.Environment.Exit(0);
                         break;
