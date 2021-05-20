@@ -13,7 +13,7 @@ namespace Address_Book
         public string State { get; set; }
         public string Email { get; set; }
         public double PhoneNumber { get; set; }
-        
+
         public double Zip { get; set; }
         public Contact(string FirstName, string LastName, string Address, string City, string State, string Email, double PhoneNumber, double Zip)
         {
@@ -25,7 +25,7 @@ namespace Address_Book
             this.Email = Email;
             this.PhoneNumber = PhoneNumber;
             this.Zip = Zip;
-           
+
 
         }
         public static void Index()
@@ -40,7 +40,8 @@ namespace Address_Book
             Console.WriteLine("6. View City Using Person");
             Console.WriteLine("7. Total Number of Contacts in Address Book");
             Console.WriteLine("8. perform File I/O");
-            Console.WriteLine("9. Exit");
+            Console.WriteLine("9. Convert to CSV");
+            Console.WriteLine("10. Exit");
 
         }
 
