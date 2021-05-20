@@ -1,19 +1,14 @@
-﻿using CsvHelper;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace Address_Book
 {
-    class CSVHandler
+    class FileIO
     {
-
-        const string PATH = @"C:\Users\Shubham\source\Address-Book\Address-Book\Utility\Example.csv";
-        
-        public static void DataToCSV(Dictionary<string, Contact> ContactList)
+        const string PATH = @"C:\Users\Shubham\source\Address-Book\Address-Book\Utility\Example.txt";
+        public static void DataToTxt(Dictionary<string, Contact> ContactList)
         {
             if (File.Exists(PATH))
             {
@@ -26,10 +21,8 @@ namespace Address_Book
                     }
                 }
             }
-            else  
-            Console.WriteLine("File doesn't exist");
+            else 
+                Console.WriteLine("File doesn't exist");
         }
-
-
     }
 }
