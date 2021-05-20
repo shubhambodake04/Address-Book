@@ -54,6 +54,10 @@ namespace Address_Book
                             break;
 
                         case 10:
+                            operation.CONVERT_TO_JSON();
+                            break;
+
+                        case 11:
                             System.Environment.Exit(0);
                             break;
 

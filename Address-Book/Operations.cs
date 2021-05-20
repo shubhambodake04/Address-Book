@@ -154,13 +154,19 @@ namespace Address_Book
 
         public void CONVERT_TO_TEXT()
         {
-            FileIO.DataToTxt(ContactLists);
+            Handler.DataToTxt(ContactLists);
         }
 
         public void CONVERT_TO_CSV()
         {
-            
-            CSVHandler.DataToCSV(ContactLists);
+
+            Handler.DataToCSV(ContactLists);
+
+        }
+        public void CONVERT_TO_JSON()
+        {
+
+            Handler.DataToJson(ContactLists);
 
         }
 
