@@ -160,6 +160,10 @@ namespace Address_Book
         {
             Handler.DataToCSV(ContactLists);
         }
+        public void CONVERT_TO_JSON()
+        {
+            Handler.DataToJson(ContactLists);
+        }
 
     }
 }

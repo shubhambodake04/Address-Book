@@ -48,6 +48,18 @@ namespace Address_Book
             else
                 Console.WriteLine("File doesn't exist");
         }
+        public static void DataToJson(Dictionary<string, Contact> ContactList)
+        {
+            if (File.Exists(JSONPATH))
+            {
+                string Json = JsonConvert.SerializeObject(ContactList);
+                using (StreamWriter sw = new StreamWriter(JSONPATH))
+                {
+                    sw.WriteLine(Json);
+                }
+            }
+
+        }
 
     }
 }
