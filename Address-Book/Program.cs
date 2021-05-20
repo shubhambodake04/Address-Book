@@ -53,11 +53,8 @@ namespace Address_Book
                             operation.CONVERT_TO_CSV();
                             break;
 
+                        
                         case 10:
-                            operation.CONVERT_TO_JSON();
-                            break;
-
-                        case 11:
                             System.Environment.Exit(0);
                             break;
 
