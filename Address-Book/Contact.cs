@@ -6,15 +6,14 @@ namespace Address_Book
 {
     class Contact
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Email { get; set; }
-        public double PhoneNumber { get; set; }
-        
-        public double Zip { get; set; }
+        public string FirstName;
+        public string LastName;
+        public string Address;
+        public string City;
+        public string State;
+        public string Email;
+        public double PhoneNumber;
+        public double Zip; 
         public Contact(string FirstName, string LastName, string Address, string City, string State, string Email, double PhoneNumber, double Zip)
         {
             this.FirstName = FirstName;
@@ -41,10 +40,11 @@ namespace Address_Book
             Console.WriteLine("7. Total Number of Contacts in Address Book");
             Console.WriteLine("8. Find Num of Person in City");
             Console.WriteLine("9. Sort by Person name");
-            Console.WriteLine("10. perform File I/O");
-            Console.WriteLine("11. Convert to CSV");
-            Console.WriteLine("12. Convert to JSON");
-            Console.WriteLine("13. Exit");
+            Console.WriteLine("10. Sort by State");
+            Console.WriteLine("11. perform File I/O");
+            Console.WriteLine("12. Convert to CSV");
+            Console.WriteLine("13. Convert to JSON");
+            Console.WriteLine("14. Exit");
 
         }
 

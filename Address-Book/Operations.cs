@@ -181,6 +181,19 @@ namespace Address_Book
                 Console.WriteLine(Info.Value.FirstName + ", " + Info.Value.LastName);
             }
         }
+
+        public void SortByState()
+        {
+
+            var sateName = from user in ContactLists
+                       orderby user.Value.State descending
+                       select user;
+
+            foreach (var Info in sateName)
+            {
+                Console.WriteLine(Info.Value.FirstName + ", " + Info.Value.State + ", " + Info.Value.City);
+            }
+        }
         public void CONVERT_TO_TEXT()
         {
             Handler.DataToTxt(ContactLists);
