@@ -152,6 +152,22 @@ namespace Address_Book
             
         }
 
+        public void NumOfPerson()
+        {
+            Console.WriteLine("Enter City:");
+            string City = Console.ReadLine();
+            int countPerson = 0;
+            foreach (var Info in ContactLists)
+            {
+                if (Info.Value.City.Equals(City))
+                {
+                    countPerson++;
+                }
+                
+            }
+            Console.WriteLine("\nNumber of Person in " + City + " are " + countPerson);
+        }
+
         public void CONVERT_TO_TEXT()
         {
             Handler.DataToTxt(ContactLists);

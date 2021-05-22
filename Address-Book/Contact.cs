@@ -39,10 +39,11 @@ namespace Address_Book
             Console.WriteLine("5. Search Person Using City");
             Console.WriteLine("6. View City Using Person");
             Console.WriteLine("7. Total Number of Contacts in Address Book");
-            Console.WriteLine("8. perform File I/O");
-            Console.WriteLine("9. Convert to CSV");
-            Console.WriteLine("10. Convert to JSON");
-            Console.WriteLine("11. Exit");
+            Console.WriteLine("8. Find Num of Person in City");
+            Console.WriteLine("9. perform File I/O");
+            Console.WriteLine("10. Convert to CSV");
+            Console.WriteLine("11. Convert to JSON");
+            Console.WriteLine("12. Exit");
 
         }
 
