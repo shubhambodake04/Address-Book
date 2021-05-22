@@ -152,7 +152,6 @@ namespace Address_Book
             Console.WriteLine("Total Number Of Contacts-- " + ContactLists.Count);
             
         }
-
         public void NumOfPerson()
         {
             Console.WriteLine("Enter City:");
