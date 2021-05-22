@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Address_Book
@@ -168,6 +169,18 @@ namespace Address_Book
             Console.WriteLine("\nNumber of Person in " + City + " are " + countPerson);
         }
 
+        public void SortByPersonName()
+        {
+            
+            var name = from user in ContactLists
+                        orderby user.Value.FirstName descending
+                        select user;
+
+            foreach (var Info in name)
+            {
+                Console.WriteLine(Info.Value.FirstName + ", " + Info.Value.LastName);
+            }
+        }
         public void CONVERT_TO_TEXT()
         {
             Handler.DataToTxt(ContactLists);

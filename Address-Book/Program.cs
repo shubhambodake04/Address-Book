@@ -50,19 +50,23 @@ namespace Address_Book
                             break;
 
                         case 9:
-                            operation.CONVERT_TO_TEXT();
+                            operation.SortByPersonName();
                             break;
 
                         case 10:
-                            operation.CONVERT_TO_CSV();
+                            operation.CONVERT_TO_TEXT();
                             break;
 
                         case 11:
+                            operation.CONVERT_TO_CSV();
+                            break;
+
+                        case 12:
                             operation.CONVERT_TO_JSON();
                             break;
 
 
-                        case 12:
+                        case 13:
                             System.Environment.Exit(0);
                             break;
 
